@@ -14,7 +14,10 @@ jobs:
    noop:
     # This workflow contains a single job called "build"
     runs-on: ubuntu-latest
-
     steps:
-     - run: echo "Hello, world! 123 \"$(git status)\""
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      - name: Hello
+        run: echo "Hello, world! 123 \"$(git status)\""
 
